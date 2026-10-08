@@ -1,0 +1,3 @@
+"use strict";
+/* Généré depuis assets/blocklists/offensive.txt (mm site) : mots jamais visibles par hasard dans une grille. */
+window.MM_BLOCKED = ["ANAL", "ANUS", "ARSE", "ASS", "BASTARD", "BITCH", "BOLLOCKS", "BONER", "BOOB", "BOOBS", "CLIT", "COCK", "COON", "CRAP", "CUM", "CUNT", "DAMN", "DICK", "DILDO", "DYKE", "FAG", "FAGGOT", "FART", "FUCK", "FUK", "GOOK", "HOMO", "HOOKER", "JIZZ", "KIKE", "KKK", "NAZI", "NIGGA", "NIGGER", "NUDE", "ORGASM", "PENIS", "PISS", "POOP", "PORN", "PRICK", "PUBE", "PUSSY", "QUEER", "RAPE", "RAPIST", "RETARD", "SCROTUM", "SEMEN", "SEX", "SEXY", "SHAG", "SHIT", "SKANK", "SLUT", "SMUT", "SPIC", "SPUNK", "TIT", "TITS", "TITTY", "TURD", "TWAT", "VAGINA", "VULVA", "WANK", "WANKER", "WHORE", "WTF"];

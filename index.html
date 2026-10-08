@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Custom Word Search Maker</title>
+  <link rel="stylesheet" href="maker.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <span class="brand">Fragzal Puzzles</span>
+      <span class="private">Your words stay on your device</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <h1>Make your custom word search</h1>
+      <p>Type a title and your words. Your puzzle appears instantly; download it as a giant poster or a page to print at home, with its answer key.</p>
+    </section>
+
+    <div class="layout">
+      <form id="maker" class="card form" novalidate autocomplete="off">
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" maxlength="60" required placeholder="Emma's 30th Birthday">
+        </div>
+        <div class="field">
+          <label for="subtitle">Second line <span class="opt">optional</span></label>
+          <input id="subtitle" name="subtitle" maxlength="90" placeholder="October 18, 2026 · Lisbon">
+        </div>
+        <div class="field">
+          <label for="words">Your words <span class="opt" id="count">0 / 150</span></label>
+          <textarea id="words" name="words" rows="8" required placeholder="One per line, or separated by commas: names, places, inside jokes…"></textarea>
+          <p class="help">At least 3 letters each. Spaces and punctuation are left out of the grid.</p>
+        </div>
+        <fieldset class="field">
+          <legend>Difficulty</legend>
+          <div class="segmented" id="difficulty">
+            <label><input type="radio" name="difficulty" value="easy"><span>Easy</span></label>
+            <label><input type="radio" name="difficulty" value="medium" checked><span>Medium</span></label>
+            <label><input type="radio" name="difficulty" value="hard"><span>Hard</span></label>
+          </div>
+          <p class="help" id="difficulty-help"></p>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Colors</legend>
+          <div class="swatches" id="styles"></div>
+        </fieldset>
+      </form>
+
+      <section class="preview card" aria-live="polite">
+        <div class="preview-head">
+          <h2>Preview</h2>
+          <div class="segmented small" id="view">
+            <label><input type="radio" name="view" value="puzzle" checked><span>Puzzle</span></label>
+            <label><input type="radio" name="view" value="answers"><span>Answer key</span></label>
+          </div>
+        </div>
+        <div class="canvas-wrap"><canvas id="canvas" aria-label="Puzzle preview"></canvas>
+          <p class="placeholder" id="placeholder">Your puzzle will appear here.</p></div>
+        <p class="status" id="status"></p>
+        <div class="downloads" id="downloads" hidden>
+          <h2>Download</h2>
+          <div class="buttons">
+            <button type="button" class="btn primary" data-file="poster-36x24">Poster 36 × 24 in</button>
+            <button type="button" class="btn" data-file="poster-48x36">Poster 48 × 36 in</button>
+            <button type="button" class="btn" data-file="poster-24x18">Poster 24 × 18 in</button>
+            <button type="button" class="btn" data-file="print-at-home">Print at home (Letter + A4)</button>
+            <button type="button" class="btn" data-file="answer-key">Answer key (Letter + A4)</button>
+            <button type="button" class="btn ghost" data-file="all">All files (ZIP)</button>
+          </div>
+          <p class="help">Posters print at any print shop: Staples, FedEx Office, Walgreens, Costco Photo… Engineering prints are the cheapest for giant sizes.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap foot">Puzzles are built in your browser by our own software: nothing you type is sent anywhere. © Fragzal</footer>
+  <script src="vendor/jspdf.umd.min.js"></script>
+  <script src="vendor/jszip.min.js"></script>
+  <script src="blocked.js"></script>
+  <script src="wordsearch.js"></script>
+  <script src="poster.js"></script>
+  <script src="maker.js"></script>
+</body>
+</html>
